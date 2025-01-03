@@ -1,1 +1,1 @@
-# https://github.com/sayinayse
+# https://sayinayse.github.io/notlar/
