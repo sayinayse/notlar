@@ -1,5 +1,5 @@
 main:
-  - title: "Ana sayfa"
+  - title: "Arşiv"
     url: /posts/
   - title: "Kategoriler"
     url: /categories/

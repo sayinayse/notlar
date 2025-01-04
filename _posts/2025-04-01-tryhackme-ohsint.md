@@ -1,29 +1,70 @@
 ---
-title: "Welcome to Jekyll!"
-date: 2019-04-18T15:34:30-04:00
+title: "TryHackMe: OhSINT!"
+date: 2025-01-04T15:34:30-04:00
 categories:
-  - blog
+  - tryhackme
 tags:
-  - Jekyll
-  - update
+  - tryhackme
+  - osint
+  - exiftool
+  - MAC
+  - BSSID, SSID
 ---
 
-You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+![OhSINT](/assets/tryhackme-ohsint/ohsint.png)
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+**[OhSINT](https://tryhackme.com/r/room/ohsint)** *açık kaynak istihbaratı* ve becerilerini kullanarak yer alan soruları yanıtlayabileyeceğiniz bir odadır. Açık kaynak istihbaratı, genelde, herkese açık kaynaklardan toplanan bilgilerin analiz edilip kullanılmasıdır. Bu bilgi içeriği görünmeyen ya da aktifliğini yitirmiş bilgileri de kapsar: web uygulamalarının eski sürümleri, yönetim panelleri, portallar, personellerin kullanmasına yönelik sayfalar vb. 
 
-Jekyll also offers powerful support for code snippets:
+Şimdi odadaki görevlere başlayabiliriz.
 
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-```
+![Windows XP](/assets/tryhackme-ohsint/image.jpg)
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+Odada bize sunulan yukarıda gördüğünüz jpg dosyasından ibaret. 
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Öncelikle, [exiftool](https://exiftool.org/) kullanarak bu görsele ait *üst veri*lere erişeceğiz. Üst veri, dosyaların içine gömülü olan ve dosyaya dair yan verileri içerir.  
+
+![ohsint1.png](/assets/tryhackme-ohsint/ohsint1.png)
+
+Exiftool ile jpg dosyasının üst verilerine baktığımızda fotoğrafın telif hakkının `OWoodflint`e ait olduğunu görüyoruz. Şimdi ilk sorumuza geçelim.
+
+>Soru 1: What is this user's avatar of?
+
+Kullanıcı adını arama motorunuzda aratmanız sonucunda aşağıdaki Twitter (X?) hesabına ve cevaba erişebilirsiniz: **cat**
+![ohsint2.png](/assets/tryhackme-ohsint/ohsint2.png)
+
+>Soru 2: What city is this person in? 
+
+Sorunun ipuçlarında `bssid + wigle.net` var.
+
+[Bssid](https://www.atera.com/blog/computer-terms-unwrapped-what-is-bssid/) *kablosuz internet ağı* erişim noktasının *medya erişim kontrolü* (MAC) adresidir. MAC (kısaltmalardan kaçınmak ya da kullanışlı Türkçe karşılıklarını yaratmak zorlu bir görev, şimdilik [yola devam](https://www.youtube.com/watch?v=MIBaT3prsNs)). MAC, on altılık gösterimle ifade edilen, 12 karakterli, 48 bitlik bir sayıdır. Örneğin: 
+
+`a3:c4:f2:45:ca:6f`
+
+Bu sayı cihazların üretim aşamalarında atanan tekil bir sayıdır (ağa bağlanabilen bütün cihazların anakartlarında ağa bağlandındığı bir ağ arayüzü olmalı, işte bu tekil sayı oraya atanır).
+
+[wigle.net](wigle.net) ise kablosuz ağ erişiminde bulunan cihazları haritalandıran bir veri tabanıdır denilebilir.
+
+`owoodflint` kullanıcı adlı twitter, pardon x, hesabında yer alan ikinci girdide kullanıcının bssid'sini paylaştığını görebilirsiiz. ilgili bssid'yi wigle.net'te aratmanız durumunda cevaba erişeceksiniz: **London**. 
+
+![Wigle.net](/assets/tryhackme-ohsint/ohsint3.png)
+
+
+Ayrıca kullanıcının [github hesabını](https://github.com/OWoodfl1nt/people_finder) incelerseniz orada da Londra'da yaşadığını belirttiğini görebilirsiniz.
+
+> Soru 3: What is the SSID of the WAP he connected to?
+
+SSID *kablosuz internet ağı*na bağlanmanızı sağlayan cihazı tanıyabilmeniz ve seçebilmeniz içindir (alfanumerik karakterler atayıp isimlendirdiğiniz ağ ismi kısaca). Bir nevi insansal DNS servisi. Neyse, yanıt: **UnileverWiFi**
+
+> Soru 4 ve 5: What is his personal email address? What site did you find his email address on?
+
+İlgili kişinin [github hesabını](https://github.com/OWoodfl1nt/people_finder) incelemeniz durumunda iki sorunun da yanıtına erişeceksiniz:  OWoodflint@gmail.com ve **github**.
+
+> Soru 6: Where has he gone on holiday?
+
+Yine kullanıcının github hesabında paylaştığı [blog sitesine](https://oliverwoodflint.wordpress.com/) giderseniz: **New York**
+![Blog sitesi](/assets/tryhackme-ohsint/ohsint4.png)
+
+> Soru 7: What is the person's password?
+
+Kaynak kodu görünüz:
+![Kaynak kod](/assets/tryhackme-ohsint/ohsint5.png)
