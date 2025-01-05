@@ -1,6 +1,6 @@
 ---
-title: "TryHackMe: OhSINT!"
-date: 2025-01-04T15:34:30-04:00
+title: "TryHackMe: Crack the hash!"
+date: 2025-01-05T15:34:30-04:00
 categories:
   - tryhackme
 tags:
