@@ -4,7 +4,6 @@ date: 2025-01-04T15:34:30-04:00
 categories:
   - tryhackme
 tags:
-  - tryhackme
   - osint
   - exiftool
   - MAC
