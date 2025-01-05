@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "TryHackMe: OhSINT!"
 date: 2025-01-04T15:34:30-04:00
 categories:
