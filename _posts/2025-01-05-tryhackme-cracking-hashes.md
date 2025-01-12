@@ -21,12 +21,15 @@ tags:
 
 Neyse. Odadaki göreve başlayalım.
 
+### Görevler
+
  Odada yer alan *öz*lerin açık metin hâlini çıkarmaya çalışacağız. Burada "çıkarmak" fillini bilinçli bir seçim ile kullandım çünkü "kırmak" tabirini kullanınca sanki şifrelenmiş (bu sebepten parolaya şifre denmememeli!!!) bir metini deşifre etmekten bahsediyoruz gibi bir ima yaratıyor. Hâlbuki bizi özü alınmış değeri bulmaya çalışıyoruz, ve bu işlem zaten bir şifreleme değil. *Öz alma*nın tersinir bir işlem olmadığından bahsetmiştik, dolayısıyla burada birden çok girdinin özünü alıp karşılaştırmak suretiyle bir kaba kuvvet saldırısı gerçekleyeceğiz.
 
  Bunun için de çeşitli araç ve yöntemler kullanacağız.
 
-
-> Soru 1: 48bb6e862e54f2a795ffc4e541caed4d
+## Bölüm 1
+### Soru 1
+> 48bb6e862e54f2a795ffc4e541caed4d
 
 Sorunun ipuçlarında öz alma işleminin md5 öz alma fonksiyonuyla yapıldığı belirtilmiş. Bizim de bu *öz-çözme*? işlemini gerçekleyebilmemiz için öz alma işleminin hangi fonksiyonla yapıldığını bilmemiz/bulmamız gerek zaten.
 
@@ -44,8 +47,8 @@ Ben bu soruda John the Ripper denilen aracı kullanacağım. Bu araç ile de han
 ![Hash1](/assets/images/tryhackme-cracking-hashes/hash1.PNG)
 
 
-
-> Soru 2: CBFDAC6008F9CAB4083784CBD1874F76618D2A97 
+### Soru 2
+> CBFDAC6008F9CAB4083784CBD1874F76618D2A97 
 
 Bu sefer örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hangi versiyonu olduğu belirtilmemiş. Şimdilik John'u format parametresini vermeden koşturalım. John bizim için çözemezse hangi tip SHA olduğunu bizim bulmamız gerekecek.
 
@@ -53,7 +56,8 @@ Bu sefer örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hang
 
 Ve çözdü: **password123**
 
-> Soru 3: 1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032
+### Soru 3
+>1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032
 
 Yine örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hangi versiyonu olduğu belirtilmemiş. Şimdilik John'u format parametresini vermeden koşturalım. 
 
@@ -65,20 +69,44 @@ Bulamadı, ama SHA256 olabileceğini gösterdi. Deneyelim:
 
 Ve yanıt: **letmein**
 
-> Soru 4: 
+### Soru 4
+
+> $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom
 
 Sorunun ipuçlarında verdiği üzere [hashcat](https://hashcat.net/wiki/doku.php?id=example_hashes) örnekleri üzerinden aratacağız.
 
 ![Hash4a](/assets/images/tryhackme-cracking-hashes/hash4-a.PNG)
 
-Böylece öz alma modunu öğrenmiş olduk. Bundan sonrasında hashcat kullanacağım.
+Böylece öz alma modunun bycrypt olduğunu ve modunun 3200 olduğunu öğrenmiş olduk. Bundan sonrasında hashcat kullanacağım. Soruda şifrenin 4 adet küçük harf içerdiği belirtilmiş, bu sebepten atak modunu 3 (maskelenmiş) olarak ayarlayıp 4 harf ile maskeleyeceğim:
+
+`hashcat -m 3200 -a 3 hash.txt ?l?l?l?l`
+
+Gördüğünüz üzere burada rockyou.txt gibi bir kelime listesi kullanmaya gerek yok. Hâlihazırda nasıl bir parola aradığımızı biliyoruz, yanıt: **bleh**.
 
 
-> Soru 5: 279412f945939ba78ce0758d3fd83daa
+### Soru 5
+> 279412f945939ba78ce0758d3fd83daa
 
-Soruda bu özün md4 öz alma fonksiyonu ile oluşturulduğu söylenmiş.
+Soruda bu özün md4 öz alma fonksiyonu ile oluşturulduğu söylenmiş.Burada da hashcat kullanabiliriz. Hashcat örneklerinden md4'un modunun 900 olduğunu görebilirsiniz:
 
+`hashcat -m 900 -a 0 hash.txt /usr/share/wordlist/rockyou.txt`
 
+-D bayrağı ile işlemci modunu da seçebilirsiniz bu arada (1:CPU, 2:GPI, 3:FPGA).
+
+**Eternity22**
+
+## Bölüm 2
+Bu bölümde zorluk biraz daha artırılmış fakat rockyou parola listesinin buradaki soruları yanıtlamak için yeterli olacağını belirtmişler.
+
+### Soru 1
+
+> F09EDCB1FCEFC6DFB23DC3505A882655FF77375ED8AA2D1C13F640FCCC2D0C85
+
+Bu soruda öz tipi ile bir ipucu verilmemiş bu sebepten john kullanarak hash tipini çıkarabilirsiniz (aşağıdaki görselde de görebileceğiniz üzere SHA256-opencl).
+
+Ardından ise yapmanız gereken --format, --wordlist parametrelerini ve sordaki özü ve sağlayarak john'u koşturmak, yanıt: **paule**
+
+![2Hash1](/assets/images/tryhackme-cracking-hashes/2hash1.PNG)
 
 
 
