@@ -10,26 +10,26 @@ tags:
   - BSSID, SSID
 ---
 
-![OhSINT](/assets/tryhackme-ohsint/ohsint.png)
+![OhSINT](/assets/images/tryhackme-ohsint/ohsint.png)
 
 **[OhSINT](https://tryhackme.com/r/room/ohsint)** *açık kaynak istihbaratı* ve becerilerini kullanarak yer alan soruları yanıtlayabileyeceğiniz bir odadır. Açık kaynak istihbaratı, genelde, herkese açık kaynaklardan toplanan bilgilerin analiz edilip kullanılmasıdır. Bu bilgi içeriği görünmeyen ya da aktifliğini yitirmiş bilgileri de kapsar: web uygulamalarının eski sürümleri, yönetim panelleri, portallar, personellerin kullanmasına yönelik sayfalar vb. 
 
 Şimdi odadaki görevlere başlayabiliriz.
 
-![Windows XP](/assets/tryhackme-ohsint/image.jpg)
+![Windows XP](/assets/images/tryhackme-ohsint/image.jpg)
 
 Odada bize sunulan yukarıda gördüğünüz jpg dosyasından ibaret. 
 
 Öncelikle, [exiftool](https://exiftool.org/) kullanarak bu görsele ait *üst veri*lere erişeceğiz. Üst veri, dosyaların içine gömülü olan ve dosyaya dair yan verileri içerir.  
 
-![ohsint1.png](/assets/tryhackme-ohsint/ohsint1.png)
+![ohsint1.png](/assets/images/tryhackme-ohsint/ohsint1.png)
 
 Exiftool ile jpg dosyasının üst verilerine baktığımızda fotoğrafın telif hakkının `OWoodflint`e ait olduğunu görüyoruz. Şimdi ilk sorumuza geçelim.
 
 >Soru 1: What is this user's avatar of?
 
 Kullanıcı adını arama motorunuzda aratmanız sonucunda aşağıdaki Twitter (X?) hesabına ve cevaba erişebilirsiniz: **cat**
-![ohsint2.png](/assets/tryhackme-ohsint/ohsint2.png)
+![ohsint2.png](/assets/images/tryhackme-ohsint/ohsint2.png)
 
 >Soru 2: What city is this person in? 
 
@@ -45,7 +45,7 @@ Bu sayı cihazların üretim aşamalarında atanan tekil bir sayıdır (ağa ba�
 
 `owoodflint` kullanıcı adlı twitter, pardon x, hesabında yer alan ikinci girdide kullanıcının bssid'sini paylaştığını görebilirsiiz. ilgili bssid'yi wigle.net'te aratmanız durumunda cevaba erişeceksiniz: **London**. 
 
-![Wigle.net](/assets/tryhackme-ohsint/ohsint3.png)
+![Wigle.net](/assets/images/tryhackme-ohsint/ohsint3.png)
 
 
 Ayrıca kullanıcının [github hesabını](https://github.com/OWoodfl1nt/people_finder) incelerseniz orada da Londra'da yaşadığını belirttiğini görebilirsiniz.
@@ -61,9 +61,9 @@ SSID *kablosuz internet ağı*na bağlanmanızı sağlayan cihazı tanıyabilmen
 > Soru 6: Where has he gone on holiday?
 
 Yine kullanıcının github hesabında paylaştığı [blog sitesine](https://oliverwoodflint.wordpress.com/) giderseniz: **New York**
-![Blog sitesi](/assets/tryhackme-ohsint/ohsint4.png)
+![Blog sitesi](/assets/images/tryhackme-ohsint/ohsint4.png)
 
 > Soru 7: What is the person's password?
 
 Kaynak kodu görünüz:
-![Kaynak kod](/assets/tryhackme-ohsint/ohsint5.png)
+![Kaynak kod](/assets/images/tryhackme-ohsint/ohsint5.png)

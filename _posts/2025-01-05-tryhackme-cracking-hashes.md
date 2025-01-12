@@ -9,7 +9,7 @@ tags:
   - hashcat
 ---
 
-![Hash cracking](/assets/tryhackme-cracking-hashes/cracking-hashes.jpeg)
+![Hash cracking](/assets/images/tryhackme-cracking-hashes/cracking-hashes.jpeg)
 
 **[Crach the hash](https://tryhackme.com/r/room/crackthehash)** *öz* değerlerini çeşitli araçları kullanarak kıracağınız ve *öz* değerlerinin karşılık geldiği açık metin değerleri yazarak soruları yanıtlayacağınız bir odadır. *Öz fonksiyonları* ile ilgili detaylı bilgiyi paylaşmayacağım fakat ayırsanmasının önemli olduğunu düşündüğüm 3 terimden bahsetmek istiyorum odadaki görevlere başlamadan evvel. Bu terimler *öz alma*, *kodlama* ve *şifreleme*dir. [Lügat](_posts\2025-01-04-lugat.md) sayfasından ecnebice[^1] karşılıklarına bakabilirsiniz. 
 
@@ -41,7 +41,7 @@ Ben bu soruda John the Ripper denilen aracı kullanacağım. Bu araç ile de han
 
 **NOT:** Bir öz alma fonksiyonunun farklı versioynları bulunabilir. Doğrudan standard versiyonundan bahsediyorsan format parametresinde başına *raw-* eklemen gerekir. 
 
-![Hash1](/assets/tryhackme-cracking-hashes/hash1.PNG)
+![Hash1](/assets/images/tryhackme-cracking-hashes/hash1.PNG)
 
 
 
@@ -49,7 +49,7 @@ Ben bu soruda John the Ripper denilen aracı kullanacağım. Bu araç ile de han
 
 Bu sefer örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hangi versiyonu olduğu belirtilmemiş. Şimdilik John'u format parametresini vermeden koşturalım. John bizim için çözemezse hangi tip SHA olduğunu bizim bulmamız gerekecek.
 
-![Hash2](/assets/tryhackme-cracking-hashes/hash2.PNG)
+![Hash2](/assets/images/tryhackme-cracking-hashes/hash2.PNG)
 
 Ve çözdü: **password123**
 
@@ -57,11 +57,11 @@ Ve çözdü: **password123**
 
 Yine örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hangi versiyonu olduğu belirtilmemiş. Şimdilik John'u format parametresini vermeden koşturalım. 
 
-![Hash3a](/assets/tryhackme-cracking-hashes/hash3-a.PNG)
+![Hash3a](/assets/images/tryhackme-cracking-hashes/hash3-a.PNG)
 
 Bulamadı, ama SHA256 olabileceğini gösterdi. Deneyelim:
 
-![Hash3b](/assets/tryhackme-cracking-hashes/hash3-b.PNG)
+![Hash3b](/assets/images/tryhackme-cracking-hashes/hash3-b.PNG)
 
 Ve yanıt: **letmein**
 
@@ -69,9 +69,18 @@ Ve yanıt: **letmein**
 
 Sorunun ipuçlarında verdiği üzere [hashcat](https://hashcat.net/wiki/doku.php?id=example_hashes) örnekleri üzerinden aratacağız.
 
-![Hash4a](/assets/tryhackme-cracking-hashes/hash4-a.PNG)
+![Hash4a](/assets/images/tryhackme-cracking-hashes/hash4-a.PNG)
 
 Böylece öz alma modunu öğrenmiş olduk. Bundan sonrasında hashcat kullanacağım.
+
+
+> Soru 5: 279412f945939ba78ce0758d3fd83daa
+
+Soruda bu özün md4 öz alma fonksiyonu ile oluşturulduğu söylenmiş.
+
+
+
+
 
 [^1]: "Müslümanlar Hrıstiyan'ın iyisine 'makûl kefere', kötüsüne 'gâvur', beterine 'şapkalı gâvur' derdi". Çankaya, Falih Rıfkı Atay. Keyifli okumalar dilerim: [Atatürk’ün İnebolu Şapka Nutku (27 Ağustos 1925)](https://isteataturk.com/g/icerik/Ataturkun-Inebolu-Sapka-Nutku-27081925/1610). 
 
