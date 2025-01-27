@@ -45,8 +45,9 @@ Bu sayı cihazların üretim aşamalarında atanan tekil bir sayıdır (ağa ba�
 
 `owoodflint` kullanıcı adlı twitter, pardon x, hesabında yer alan ikinci girdide kullanıcının bssid'sini paylaştığını görebilirsiiz. ilgili bssid'yi wigle.net'te aratmanız durumunda cevaba erişeceksiniz: **London**. 
 
-![Wigle.net](/assets/images/tryhackme-ohsint/ohsint3.png)
-
+<div align="center">
+<img src="/assets/images/tryhackme-ohsint/ohsint3.png" width="400" height="200">
+</div>
 
 Ayrıca kullanıcının [github hesabını](https://github.com/OWoodfl1nt/people_finder) incelerseniz orada da Londra'da yaşadığını belirttiğini görebilirsiniz.
 
