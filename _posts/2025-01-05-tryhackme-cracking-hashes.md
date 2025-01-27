@@ -29,7 +29,7 @@ Neyse. Odadaki göreve başlayalım.
 
 ## Bölüm 1
 ### Soru 1
-> 48bb6e862e54f2a795ffc4e541caed4d
+``` 48bb6e862e54f2a795ffc4e541caed4d ```
 
 Sorunun ipuçlarında öz alma işleminin md5 öz alma fonksiyonuyla yapıldığı belirtilmiş. Bizim de bu *öz-çözme*? işlemini gerçekleyebilmemiz için öz alma işleminin hangi fonksiyonla yapıldığını bilmemiz/bulmamız gerek zaten.
 
@@ -48,7 +48,7 @@ Ben bu soruda John the Ripper denilen aracı kullanacağım. Bu araç ile de han
 
 
 ### Soru 2
-> CBFDAC6008F9CAB4083784CBD1874F76618D2A97 
+``` CBFDAC6008F9CAB4083784CBD1874F76618D2A97 ```
 
 Bu sefer örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hangi versiyonu olduğu belirtilmemiş. Şimdilik John'u format parametresini vermeden koşturalım. John bizim için çözemezse hangi tip SHA olduğunu bizim bulmamız gerekecek.
 
@@ -57,7 +57,7 @@ Bu sefer örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hang
 Ve çözdü: **password123**
 
 ### Soru 3
->1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032
+``` 1C8BFE8F801D79745C4631D09FFF36C82AA37FC4CCE4FC946683D7B336B63032 ```
 
 Yine örnekte SHA öz alma fonksiyonu kullanıldığı belirtilmiş ama hangi versiyonu olduğu belirtilmemiş. Şimdilik John'u format parametresini vermeden koşturalım. 
 
@@ -71,7 +71,7 @@ Ve yanıt: **letmein**
 
 ### Soru 4
 
-> $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom
+``` $2y$12$Dwt1BZj6pcyc3Dy1FWZ5ieeUznr71EeNkJkUlypTsgbX1H68wsRom ```
 
 Sorunun ipuçlarında verdiği üzere [hashcat](https://hashcat.net/wiki/doku.php?id=example_hashes) örnekleri üzerinden aratacağız.
 
@@ -85,7 +85,7 @@ Gördüğünüz üzere burada rockyou.txt gibi bir kelime listesi kullanmaya ger
 
 
 ### Soru 5
-> 279412f945939ba78ce0758d3fd83daa
+``` 279412f945939ba78ce0758d3fd83daa ```
 
 Soruda bu özün md4 öz alma fonksiyonu ile oluşturulduğu söylenmiş.Burada da hashcat kullanabiliriz. Hashcat örneklerinden md4'un modunun 900 olduğunu görebilirsiniz:
 
@@ -98,9 +98,9 @@ Soruda bu özün md4 öz alma fonksiyonu ile oluşturulduğu söylenmiş.Burada 
 ## Bölüm 2
 Bu bölümde zorluk biraz daha artırılmış fakat rockyou parola listesinin buradaki soruları yanıtlamak için yeterli olacağını belirtmişler.
 
-### Soru 1
+### Soru 1 
 
-> F09EDCB1FCEFC6DFB23DC3505A882655FF77375ED8AA2D1C13F640FCCC2D0C85
+``` F09EDCB1FCEFC6DFB23DC3505A882655FF77375ED8AA2D1C13F640FCCC2D0C85 ```
 
 Bu soruda öz tipi ile bir ipucu verilmemiş bu sebepten john kullanarak hash tipini çıkarabilirsiniz (aşağıdaki görselde de görebileceğiniz üzere SHA256-opencl).
 
