@@ -17,7 +17,7 @@ tags:
 Şimdi odadaki görevlere başlayabiliriz.
 
 
-## 1. Görselin Üst Verisini İnceleme
+## Görselin Üst Verisini İnceleme
 
 ![Windows XP](/assets/images/tryhackme-ohsint/image.jpg)
 
@@ -48,9 +48,6 @@ Bu sayı cihazların üretim aşamalarında atanan tekil bir sayıdır (ağa ba�
 
 `owoodflint` kullanıcı adlı twitter, pardon x, hesabında yer alan ikinci girdide kullanıcının bssid'sini paylaştığını görebilirsiiz. ilgili bssid'yi wigle.net'te aratmanız durumunda cevaba erişeceksiniz: **London**. 
 
-<div align="center">
-<img src="/assets/images/tryhackme-ohsint/ohsint3.png" width="400" height="200">
-</div>
 
 ![Wigle](/assets/images/tryhackme-ohsint/ohsint3.png){: style="width:400px; height:200px; display:block; margin:auto;"}
 

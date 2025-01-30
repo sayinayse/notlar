@@ -9,15 +9,21 @@ tags:
   - hashcat
 ---
 
-![Hash cracking](/assets/images/tryhackme-cracking-hashes/cracking-hashes.jpeg)
+<p align="center">
+  <img src="/assets/images/tryhackme-cracking-hashes/cracking-hashes.jpeg" alt="Hash cracking" />
+</p>
+
+## Giriş
 
 **[Crach the hash](https://tryhackme.com/r/room/crackthehash)** *öz* değerlerini çeşitli araçları kullanarak kıracağınız ve *öz* değerlerinin karşılık geldiği açık metin değerleri yazarak soruları yanıtlayacağınız bir odadır. *Öz fonksiyonları* ile ilgili detaylı bilgiyi paylaşmayacağım fakat ayırsanmasının önemli olduğunu düşündüğüm 3 terimden bahsetmek istiyorum odadaki görevlere başlamadan evvel. Bu terimler *öz alma*, *kodlama* ve *şifreleme*dir. [Lügat](\2025-01-04-lugat.md) sayfasından ecnebice[^1] karşılıklarına bakabilirsiniz. 
 
-*Öz alma* işlemi *parola*ların (özellikle *şifreleme* kavramı ile *öz alma* işleminin karışmasını *parolaya* şifre denmesinden kaynaklandığını düşünüyorum) tersinir olmayan bir matematiksel fonksiyona girdi olarak verilmesiyle elde edilir.
+### Terimlerin Açıklamaları
 
-*Kodlama* işlemi bilgisayarlara bizim için semantik anlamı olan kelime, harfler ve sembollerin anlatılması için kullanılan yöntemlere verilen isimdir (bkz. UTF-8, ASCII).
+- **Öz alma** işlemi *parola*ların (özellikle *şifreleme* kavramı ile *öz alma* işleminin karışmasını *parolaya* şifre denmesinden kaynaklandığını düşünüyorum) tersinir olmayan bir matematiksel fonksiyona girdi olarak verilmesiyle elde edilir.
 
-Öte yandan *şifreleme* ise veri/metinlerin gizliliğini sağlamak için kullanılan tersinir işlemin adıdır. 
+- **Kodlama**işlemi bilgisayarlara bizim için semantik anlamı olan kelime, harfler ve sembollerin anlatılması için kullanılan yöntemlere verilen isimdir (bkz. UTF-8, ASCII).
+
+- **Şifreleme** ise veri/metinlerin gizliliğini sağlamak için kullanılan tersinir işlemin adıdır. 
 
 Neyse. Odadaki göreve başlayalım.
 
