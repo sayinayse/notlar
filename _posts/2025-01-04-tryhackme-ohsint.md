@@ -16,6 +16,9 @@ tags:
 
 Şimdi odadaki görevlere başlayabiliriz.
 
+
+## 1. Görselin Üst Verisini İnceleme
+
 ![Windows XP](/assets/images/tryhackme-ohsint/image.jpg)
 
 Odada bize sunulan yukarıda gördüğünüz jpg dosyasından ibaret. 
@@ -26,12 +29,12 @@ Odada bize sunulan yukarıda gördüğünüz jpg dosyasından ibaret.
 
 Exiftool ile jpg dosyasının üst verilerine baktığımızda fotoğrafın telif hakkının `OWoodflint`e ait olduğunu görüyoruz. Şimdi ilk sorumuza geçelim.
 
->Soru 1: What is this user's avatar of?
+### Soru 1: What is this user's avatar of?
 
 Kullanıcı adını arama motorunuzda aratmanız sonucunda aşağıdaki Twitter (X?) hesabına ve cevaba erişebilirsiniz: **cat**
 ![ohsint2.png](/assets/images/tryhackme-ohsint/ohsint2.png)
 
->Soru 2: What city is this person in? 
+### Soru 2: What city is this person in? 
 
 Sorunun ipuçlarında `bssid + wigle.net` var.
 
@@ -49,22 +52,24 @@ Bu sayı cihazların üretim aşamalarında atanan tekil bir sayıdır (ağa ba�
 <img src="/assets/images/tryhackme-ohsint/ohsint3.png" width="400" height="200">
 </div>
 
+![Wigle](/assets/images/tryhackme-ohsint/ohsint3.png){: style="width:400px; height:200px; display:block; margin:auto;"}
+
 Ayrıca kullanıcının [github hesabını](https://github.com/OWoodfl1nt/people_finder) incelerseniz orada da Londra'da yaşadığını belirttiğini görebilirsiniz.
 
-> Soru 3: What is the SSID of the WAP he connected to?
+### Soru 3: What is the SSID of the WAP he connected to?
 
 SSID *kablosuz internet ağı*na bağlanmanızı sağlayan cihazı tanıyabilmeniz ve seçebilmeniz içindir (alfanumerik karakterler atayıp isimlendirdiğiniz ağ ismi kısaca). Bir nevi insansal DNS servisi. Neyse, yanıt: **UnileverWiFi**
 
-> Soru 4 ve 5: What is his personal email address? What site did you find his email address on?
+### Soru 4 ve 5: What is his personal email address? What site did you find his email address on?
 
 İlgili kişinin [github hesabını](https://github.com/OWoodfl1nt/people_finder) incelemeniz durumunda iki sorunun da yanıtına erişeceksiniz:  OWoodflint@gmail.com ve **github**.
 
-> Soru 6: Where has he gone on holiday?
+### Soru 6: Where has he gone on holiday?
 
 Yine kullanıcının github hesabında paylaştığı [blog sitesine](https://oliverwoodflint.wordpress.com/) giderseniz: **New York**
 ![Blog sitesi](/assets/images/tryhackme-ohsint/ohsint4.png)
 
-> Soru 7: What is the person's password?
+### Soru 7: What is the person's password?
 
 Kaynak kodu görünüz:
-![Kaynak kod](/assets/images/tryhackme-ohsint/ohsint5.png)
+![Kaynak kod](/assets/images/tryhackme-ohsint/ohsint5.png){: .center }

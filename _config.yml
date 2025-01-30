@@ -77,6 +77,17 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/"
 
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
 defaults:
   # _posts
   - scope:
