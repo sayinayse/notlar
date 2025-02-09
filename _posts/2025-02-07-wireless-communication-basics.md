@@ -1,6 +1,6 @@
 ---
 title: "Kablosuz İletişim Temelleri: İletim Temelleri"
-date: 2025-01-22T12:17:30-04:00
+date: 2025-02-17T12:17:30-04:00
 categories:
   - blog yazıları
 tags:

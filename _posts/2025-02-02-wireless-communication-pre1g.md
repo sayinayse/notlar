@@ -1,6 +1,6 @@
 ---
 title: "Kablosuz İletişim Temelleri: Bilgilendirme"
-date: 2025-02-09T18:00:30-04:00
+date: 2025-02-02T18:00:30-04:00
 categories:
   - blog yazıları
 tags:
