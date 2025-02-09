@@ -1,6 +1,6 @@
 ---
 title: "Kablosuz İletişim Temelleri: Kablosuz Ortamın Nitelikleri"
-date: 2025-02-09T17:04:30-04:00
+date: 2025-02-09T17:08:30-04:00
 categories:
   - blog yazıları
 tags:

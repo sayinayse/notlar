@@ -51,7 +51,7 @@ e tabiî bu artırımların da farklı farklı maliyetleri var. mesela kafana g�
 
 ya da frekansı daha yüksek taşıyıcı sinyaller kullanabilirsin ama bu sefer gönderdiğin sinyaller yağmurla ve su molekülleri ile falan etkileşebilir (yani bunlar tarafından dağıtılabilir veya absorbe edilebilir). gibi gibi.
 
-[^1] ...sonrasında - post hoc safsatası: kronolojik olarak art arda gerçekleşen iki olay arasında veri, delil ya da mantığa başvurmadan, sırf gerçekleşme sırasından kaynaklanan bir nedensellik bağı kurmaktan ileri gelir.
+[^1]: ...sonrasında - post hoc safsatası: kronolojik olarak art arda gerçekleşen iki olay arasında veri, delil ya da mantığa başvurmadan, sırf gerçekleşme sırasından kaynaklanan bir nedensellik bağı kurmaktan ileri gelir.
 
 - #korelasyon biri bağımsız diğeri bağımlı iki değişken arasındaki ilişki.
 - birbirleri ardındaki mekaznizmanın net olarak açıklanabilmesi önemli korelasyonda. yazın dondurma tüketimi artar... yazın evlilik sayısı da artar... o hâlde dondurmanın evliliğe neden olduğundan söz edebilir miyiz? elbette hayır.

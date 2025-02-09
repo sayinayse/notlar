@@ -258,5 +258,5 @@ meterpreter >
 **flag{admin_documents_can_be_valuable}**
 
 
-[^1] Script zamanında betik olarak Türkçeleştirilmiş. TDK'da betik şeklinde geçiyor, tatlıya süçüg demediğimiz gibi *komut dizini dosyası?* gibi bir şeye de betik dememek daha hoş olacak sanki.
-[^2] *Geriye bağlantılı kabuk?* belki shell kavramına dokunmadan Türkçeleştirmeli, keza kulak tırmalıyor. 
+[^1]: Script zamanında betik olarak Türkçeleştirilmiş. TDK'da betik şeklinde geçiyor, tatlıya süçüg demediğimiz gibi *komut dizini dosyası?* gibi bir şeye de betik dememek daha hoş olacak sanki.
+[^2]: *Geriye bağlantılı kabuk?* belki shell kavramına dokunmadan Türkçeleştirmeli, keza kulak tırmalıyor. 
